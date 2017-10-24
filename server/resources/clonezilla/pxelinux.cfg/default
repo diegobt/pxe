@@ -7,6 +7,6 @@ MENU TITLE PXE Menu
 
 LABEL Live
   kernel vmlinuz
-  append initrd=initrd.img boot=live union=aufs noswap noeject nolocales ip=frommedia vga=788 fetch=tftp://192.168.0.1/filesystem.squashfs
+  append initrd=initrd.img boot=live union=aufs noswap noeject nolocales ip=frommedia vga=788 fetch=tftp://192.168.0.254:69/filesystem.squashfs
 
 

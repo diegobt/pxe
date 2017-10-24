@@ -12,7 +12,7 @@ cp /config/tftpd-hpa /etc/default/tftpd-hpa
 mkdir /tftpboot
 
 ### Copy PXE folder to boot
-cp -R /resources/debian/* /tftpboot/
+cp -R /resources/clonezilla/* /tftpboot/
 systemctl restart tftpd-hpa
 
 ### PXE configuration

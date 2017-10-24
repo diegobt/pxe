@@ -1,13 +1,14 @@
 # Vagrant PXE test environment
 
-This is a vagrant PXE client/server environment that supports virtualbox and libvirt providers. dhcp/tftp config files are in the config directory. The distro to boot from pxe is in the resources directory. Both paths are set from setup.sh.
-Vagrant files for client and server are included in respective directories
+This is a vagrant PXE client/server environment that supports virtualbox and libvirt providers.  
+dhcp/tftp config files are in the config/ directory. The distro to boot from is in the resources/ directory. Both paths are set from setup.sh.  
+Vagrant files for client and server are included in respective directories.  
 
 
 ## Setup
-Check config/* for PXE configuration
-Put your PX boot distro in resources/
-Change setup.sh to include your resources/distro
+- Check config/* for PXE configuration
+- Put your PX boot distro in resources/
+- Change setup.sh to include your resources/distro
 
 
 ## Run PXE server

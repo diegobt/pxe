@@ -15,7 +15,7 @@ run:
 clean: 
 	@echo "+++ Stopping and removing containers +++"
 	VBoxManage list runningvms | awk '{print $$1}' | xargs -I{} VBoxManage controlvm {} poweroff 
-	vagrant global-status | awk '/poweroff/{print $$1}' | xargs vagrant destroy -f 
+	vagrant global-status | awk '/running|paused|poweroff|aborted/{print $$1}' | xargs vagrant destroy -f 
 
 destroy:
 	cd server; vagrant destroy -f

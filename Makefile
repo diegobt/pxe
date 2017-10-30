@@ -17,5 +17,9 @@ clean:
 	VBoxManage list runningvms | awk '{print $$1}' | xargs -I{} VBoxManage controlvm {} poweroff 
 	vagrant global-status | awk '/poweroff/{print $$1}' | xargs vagrant destroy -f 
 
+destroy:
+	cd server; vagrant destroy -f
+	cd client; vagrant destroy -f
+
 list:
 	vagrant global-status

@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.define :pxe_client do |pxe_client|
-
+    # pxe_client.ssh.username ='user'
     pxe_client.vm.box = 'debian/jessie64'
 
     pxe_client.vm.provider :libvirt do |libvirt|

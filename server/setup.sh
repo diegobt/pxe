@@ -12,8 +12,15 @@ cp /config/tftpd-hpa /etc/default/tftpd-hpa
 mkdir /tftpboot
 
 ### Copy PXE folder to boot
-cp -R /resources/debian/* /tftpboot/
+cp -R /resources/clonezilla/* /tftpboot/
 systemctl restart tftpd-hpa
 
 ### PXE configuration
-apt-get install -y pxe
+apt-get install -y pxe 
+
+### NFS configuration
+apt-get install -y nfs-kernel-server nfs-common
+chown nobody:nogroup /partimag
+chmod 755 /partimag
+echo "/partimag *(rw,sync,no_root_squash)" > /etc/exports
+service nfs-kernel-server restart

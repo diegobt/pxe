@@ -24,3 +24,9 @@ chown nobody:nogroup /partimag
 chmod 755 /partimag
 echo "/partimag *(rw,sync,no_root_squash)" > /etc/exports
 service nfs-kernel-server restart
+
+### Copy clonezilla scripts
+cp /config/clonezilla-save.sh /partimag/
+cp /config/clonezilla-restore.sh /partimag/
+chmod a+x /partimag/*
+
